@@ -5,72 +5,7 @@
     <p>Cat te quiere mucho, pero a veces por recuerdos de su mente, este se pone triste.</p>
     <a href="https://www.filesharing.com/download/miyVfbhfvhSOZvu3bjuU">Descargar Cat! [Ejecutable cat.exe]</a>
     <img src="cat-learn.png"></img>
-    <canvas id="canvas"></canvas>
-
-  <script>
-    // Obtener el canvas
-    var canvas = document.getElementById("canvas");
-    var ctx = canvas.getContext("2d");
-
-    // Configurar el tamaño del canvas
-    canvas.width = window.innerWidth;
-    canvas.height = 300;
-
-    // Crear un array de objetos para almacenar los gifs de gatos
-    var gifs = [];
-
-    // Cargar los gifs de gatos
-    var catGifs = [
-      "cat-spin.gif",
-      "cat-walk.gif"
-      // Agrega más rutas a los gifs de gatos aquí
-    ];
-
-    // Función para cargar los gifs de gatos
-    function loadGifs() {
-      for (var i = 0; i < catGifs.length; i++) {
-        var gif = new Image();
-        gif.src = catGifs[i];
-        gifs.push(gif);
-      }
-    }
-
-    // Efecto de ojo de pez y movimiento de los gifs
-    function draw() {
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
-
-      for (var i = 0; i < gifs.length; i++) {
-        var gif = gifs[i];
-        var x = Math.random() * (canvas.width - gif.width);
-        var y = canvas.height - gif.height;
-
-        // Aplicar efecto de ojo de pez
-        var scale = Math.random() * 0.5 + 1; // Escala aleatoria entre 1 y 1.5
-        ctx.setTransform(scale, 0, 0, 1, x, y);
-
-        // Dibujar el gif de gato en el canvas
-        ctx.drawImage(gif, 0, 0);
-
-        // Restaurar la transformación del contexto
-        ctx.setTransform(1, 0, 0, 1, 0, 0);
-
-        // Mover los gifs hacia arriba
-        gifs[i].height -= 2;
-        y -= 2;
-
-        // Si el gif ya no es visible en el canvas, eliminarlo del array
-        if (y + gif.height < 0) {
-          gifs.splice(i, 1);
-          i--;
-        }
-      }
-
-      requestAnimationFrame(draw);
-    }
-
-    // Cargar los gifs y comenzar a dibujar
-    loadGifs();
-    draw();
+    <img src="cat-spin.gif"></img> <code>Programa creado por Santi9000</code> <a href="https://santi99999.github.io/lcds">Pagina web de Santi9000</a>
   </script>
   </body>
 </html>
